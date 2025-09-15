@@ -1,0 +1,22 @@
+{
+  "name": "spa-booking",
+  "version": "1.0.0",
+  "description": "A modern spa booking application",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext .js,.html --fix"
+  },
+  "keywords": ["spa", "booking", "appointment", "wellness"],
+  "author": "Jessica Mathieu",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^4.4.0",
+    "eslint": "^8.45.0"
+  },
+  "dependencies": {
+    "date-fns": "^2.30.0"
+  }
+}

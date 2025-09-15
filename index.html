@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spa Booking - Réservation en ligne</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="container">
+                <h1 class="logo">🧘‍♀️ Spa Wellness</h1>
+                <nav class="nav">
+                    <a href="#home" class="nav-link active">Accueil</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#booking" class="nav-link">Réserver</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main">
+            <!-- Home Section -->
+            <section id="home" class="section home-section active">
+                <div class="container">
+                    <div class="hero">
+                        <h2 class="hero-title">Détendez-vous et ressourcez-vous</h2>
+                        <p class="hero-subtitle">Découvrez nos soins de bien-être et réservez votre moment de détente en quelques clics</p>
+                        <button class="cta-button" onclick="showSection('booking')">Réserver maintenant</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services" class="section services-section">
+                <div class="container">
+                    <h2 class="section-title">Nos Services</h2>
+                    <div class="services-grid">
+                        <div class="service-card" data-service="massage" data-duration="60" data-price="80">
+                            <h3>Massage Relaxant</h3>
+                            <p>60 minutes de pure détente</p>
+                            <span class="price">80€</span>
+                        </div>
+                        <div class="service-card" data-service="facial" data-duration="45" data-price="65">
+                            <h3>Soin du Visage</h3>
+                            <p>45 minutes pour une peau éclatante</p>
+                            <span class="price">65€</span>
+                        </div>
+                        <div class="service-card" data-service="body-wrap" data-duration="90" data-price="120">
+                            <h3>Enveloppement Corporel</h3>
+                            <p>90 minutes de soins complets</p>
+                            <span class="price">120€</span>
+                        </div>
+                        <div class="service-card" data-service="manicure" data-duration="30" data-price="35">
+                            <h3>Manucure</h3>
+                            <p>30 minutes pour des ongles parfaits</p>
+                            <span class="price">35€</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Booking Section -->
+            <section id="booking" class="section booking-section">
+                <div class="container">
+                    <h2 class="section-title">Réserver un Rendez-vous</h2>
+                    <div class="booking-form-container">
+                        <form id="booking-form" class="booking-form">
+                            <div class="form-group">
+                                <label for="service">Service</label>
+                                <select id="service" name="service" required>
+                                    <option value="">Choisissez un service</option>
+                                    <option value="massage">Massage Relaxant (60 min - 80€)</option>
+                                    <option value="facial">Soin du Visage (45 min - 65€)</option>
+                                    <option value="body-wrap">Enveloppement Corporel (90 min - 120€)</option>
+                                    <option value="manicure">Manucure (30 min - 35€)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="date">Date</label>
+                                    <input type="date" id="date" name="date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="time">Heure</label>
+                                    <select id="time" name="time" required>
+                                        <option value="">Choisissez une heure</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">Prénom</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Nom</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Téléphone</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="notes">Notes (optionnel)</label>
+                                <textarea id="notes" name="notes" rows="3" placeholder="Demandes particulières..."></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-button">Confirmer la réservation</button>
+                        </form>
+
+                        <div id="booking-summary" class="booking-summary" style="display: none;">
+                            <h3>Résumé de votre réservation</h3>
+                            <div class="summary-content"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section contact-section">
+                <div class="container">
+                    <h2 class="section-title">Contact</h2>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h3>📍 Adresse</h3>
+                            <p>123 Rue de la Détente<br>75001 Paris</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>📞 Téléphone</h3>
+                            <p>01 23 45 67 89</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>✉️ Email</h3>
+                            <p>contact@spawellness.fr</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>🕒 Horaires</h3>
+                            <p>Lun-Sam: 9h-20h<br>Dim: 10h-18h</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Booking Confirmation Modal -->
+        <div id="confirmation-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>✅ Réservation Confirmée</h2>
+                <div id="confirmation-details"></div>
+                <button class="modal-button" onclick="closeModal()">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/app.js"></script>
+</body>
+</html>
